@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/jpeg" href="./images/logo.jpg"/>
+<title>Premier Lien - Maternité, Parentalité et Petite Enfance</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#7f5700",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#fcdcd1",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#837562",
+                    "surface-container": "#efeeeb",
+                    "on-tertiary-container": "#5d473f",
+                    "surface-bright": "#fbf9f6",
+                    "primary-fixed-dim": "#ffba3d",
+                    "surface-variant": "#e4e2df",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "charcoal-text": "#3C2A21",
+                    "tertiary-fixed-dim": "#dfc0b5",
+                    "secondary-fixed": "#cfeacc",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdead",
+                    "glass-white": "rgba(255, 255, 255, 0.75)",
+                    "primary-container": "#f3b033",
+                    "on-surface": "#1b1c1a",
+                    "outline-variant": "#d5c4ae",
+                    "on-background": "#1b1c1a",
+                    "surface-container-highest": "#e4e2df",
+                    "surface-container-high": "#eae8e5",
+                    "primary": "#7f5700",
+                    "on-surface-variant": "#504534",
+                    "tertiary-container": "#d4b6ac",
+                    "surface": "#fbf9f6",
+                    "tertiary": "#715951",
+                    "powder-rose": "#FAF0EC",
+                    "on-tertiary-fixed": "#281711",
+                    "on-secondary-fixed-variant": "#364c36",
+                    "surface-dim": "#dbdad7",
+                    "on-primary-fixed-variant": "#604100",
+                    "inverse-surface": "#30312f",
+                    "on-tertiary-fixed-variant": "#57423a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#cfeacc",
+                    "on-primary-fixed": "#281900",
+                    "on-secondary-fixed": "#0b200e",
+                    "on-primary-container": "#664500",
+                    "secondary-fixed-dim": "#b4cdb1",
+                    "on-secondary-container": "#536a52",
+                    "inverse-primary": "#ffba3d",
+                    "secondary": "#4d644d",
+                    "inverse-on-surface": "#f2f0ed",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f5f3f0",
+                    "background": "#fbf9f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "headline-xl-mobile": ["Outfit"],
+                    "headline-lg": ["Outfit"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Outfit"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+<script>
+        function openTab(evt, tabName, groupClass) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName(groupClass + "-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName(groupClass + "-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("border-primary", "text-primary", "font-bold");
+                tablinks[i].classList.add("border-transparent", "text-on-surface-variant");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.remove("border-transparent", "text-on-surface-variant");
+            evt.currentTarget.classList.add("border-primary", "text-primary", "font-bold");
+        }
+
+        function selectProfile(evt, profileValue) {
+            let label = 'Bénévole';
+            if (profileValue === 'partenaire') label = 'Partenaire';
+            if (profileValue === 'professionnel') label = 'Professionnel de santé';
+            document.getElementById('selected-profile').value = label;
+            document.getElementById('email-subject').value = '[Premier Lien] Nouveau message - ' + label;
+            
+            var tablinks = document.getElementsByClassName("profile-btn");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("border-primary", "text-primary", "font-bold");
+                tablinks[i].classList.add("border-transparent", "text-on-surface-variant");
+            }
+            evt.currentTarget.classList.remove("border-transparent", "text-on-surface-variant");
+            evt.currentTarget.classList.add("border-primary", "text-primary", "font-bold");
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased relative min-h-screen flex flex-col">
+<!-- Header (TopAppBar) -->
+<header class="bg-glass-white/75 backdrop-blur-[10px] fixed top-0 w-full z-50 border-b border-white/40 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2">
+<img alt="Logo Premier Lien" class="w-10 h-10 object-contain rounded-full" src="./images/logo.jpg"/>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Premier Lien</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-6 lg:gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#histoire">Histoire</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#missions">Missions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#thematiques">Thématiques</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#actualites">Actualités</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#contact">Contact</a>
+</nav>
+<div class="hidden md:block">
+<a class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-sm hover:shadow-md transform active:scale-95 duration-200" href="#contact">
+                    Nous contacter
+                </a>
+</div>
+<!-- Mobile Menu Button -->
+<button id="menu-btn" class="md:hidden text-on-surface-variant p-2 focus:outline-none">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+
+<!-- Mobile Drawer Navigation -->
+<div id="mobile-drawer" class="hidden md:hidden bg-background border-b border-white/40 px-6 py-6 flex flex-col gap-4 absolute top-20 left-0 w-full shadow-lg">
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="#histoire">Histoire</a>
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="#missions">Missions</a>
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="#thematiques">Thématiques</a>
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="#actualites">Actualités</a>
+    <a class="text-charcoal-text/95 font-medium pb-2" href="#contact">Contact</a>
+    <a class="bg-primary-container text-on-primary-container text-center font-label-md text-label-md py-3 rounded-full mt-2 hover:opacity-90 transition-opacity shadow-sm active:scale-95 duration-200" href="#contact">
+        Nous contacter
+    </a>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[85vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-20">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3UkGCcVomP-7qk-sUzYYarLvOm6WxWQQxg5cHbCTHGJCMiQvvqIzpdmbDF2MQ-TVo3TQAx2cFzAebw0hsBhjdt9cR2O7LFl7C8BkLSHSMu3347pnHmWcFPxNS5lnu-gpW0g0PJpCRCgspmWJpR1kcDHbE9XafPf7SFsKGJYJ81d5tZhdcsiyF6abqBPZ3D2AqX0ibBtANI55aeod_AbcfRIkwnAfYrnbC5s_GPPCG60RRBFh3V5YLzaqkbN1KzhN-PcCzRS_FFzLV');"></div>
+<div class="absolute inset-0 bg-background/50 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 glass-card p-8 md:p-14 rounded-2xl max-w-4xl text-center flex flex-col items-center gap-8 transform transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
+<img alt="Logo Premier Lien" class="w-32 h-32 object-contain rounded-full border-4 border-white/60 shadow-md" src="./images/logo.jpg"/>
+<div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-charcoal-text mb-4">Informer, sensibiliser et accompagner pour renforcer les premiers liens de la vie</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-xl">Santé de la femme, Parentalité et Petite enfance</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+<a class="bg-primary-container text-on-primary-container font-label-md text-label-md px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-sm hover:shadow-md transform active:scale-95 duration-200 text-center" href="#contact">
+                        Nous contacter
+                    </a>
+<a class="bg-surface/80 border border-outline-variant text-primary font-label-md text-label-md px-8 py-3.5 rounded-full hover:bg-surface transition-colors shadow-sm hover:shadow-md transform active:scale-95 duration-200 text-center" href="#histoire">
+                        Nous découvrir
+                    </a>
+<a class="bg-surface/80 border border-outline-variant text-primary font-label-md text-label-md px-8 py-3.5 rounded-full hover:bg-surface transition-colors shadow-sm hover:shadow-md transform active:scale-95 duration-200 text-center" href="#contact">
+                        Devenir bénévole
+                    </a>
+</div>
+</div>
+</section>
+<!-- Qui sommes-nous Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10 bg-background" id="qui-sommes-nous">
+<div class="max-w-[1200px] mx-auto text-center max-w-3xl mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-6">Qui sommes-nous ?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+    Premier Lien est une association créée par de jeunes étudiantes passionnées par la santé, la parentalité et la petite enfance.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+    Notre objectif est de promouvoir une information fiable, accessible et bienveillante autour de la santé de la femme, de la parentalité, de la petite enfance et du lien parent-enfant. À travers nos actions de prévention, de sensibilisation et de soutien, nous souhaitons contribuer au bien-être des femmes, des familles et des enfants tout en favorisant l’accès à des ressources adaptées aux besoins de chacun.
+</p>
+<p class="font-body-md text-body-md font-semibold text-secondary leading-relaxed">
+    Nous croyons que chaque famille mérite d’être accompagnée, écoutée et soutenue sans jugement, dans le respect de son histoire et de son parcours.
+</p>
+</div>
+</section>
+
+<!-- Organic Divider: White to Pink -->
+<div class="w-full h-16 bg-powder-rose overflow-hidden relative z-10">
+<svg class="absolute bottom-0 w-full h-full text-background fill-current" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.42,120,192.66,106.32,238.13,96.34,279.79,74.52,321.39,56.44Z"></path>
+</svg>
+</div>
+
+<!-- Histoire Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10 bg-powder-rose" id="histoire">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-6">🌸 Notre Histoire</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+    Premier Lien est né d’une volonté commune : agir concrètement auprès des femmes, des parents et des enfants.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+    Au fil de nos études, de nos stages et de nos expériences personnelles, nous avons observé que de nombreuses personnes manquaient d’informations fiables, de soutien ou simplement d’un espace d’écoute autour de sujets essentiels comme la parentalité, le post-partum, la santé des femmes ou encore le développement de l’enfant.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+    Face à ce constat, nous avons décidé de créer Premier Lien afin de proposer des actions de prévention et de sensibilisation accessibles à tous. Notre ambition est de construire progressivement un projet humain, bienveillant et utile, au plus près des besoins des familles.
+</p>
+</div>
+<div class="lg:w-1/2">
+<div class="rounded-2xl overflow-hidden shadow-lg border-2 border-white/40">
+<img alt="Lien Mère-Enfant" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnn1cXFSL24vZYSV8f_CN3VoFWWIcaWAj_PZEVUr412GOB9eQf_9gutqFPtHQ-_wM57xUgdcNoBh8ADf4HJNqrd_7Bvcqq7WD8i9gwsC897h30BVgod_7fsgiLpW1hh7MdAW4_pJFukTmQAVS1RkMBC5ICvGmMFyEbmuMWGd6OhBEgESFTXHpQPfDxXpDXTb31fP3HPSMlxIIsrBpUdi7TlUtEOCGhymrBxiuIGDgC6r4uSxziMGQv-sKtBW0DDu9TIIt7OeX9O2g9"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Organic Divider: Pink to White -->
+<div class="w-full h-16 bg-powder-rose overflow-hidden relative z-10">
+<svg class="absolute bottom-0 w-full h-full text-background fill-current" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+<path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5V0Z" opacity=".5"></path>
+<path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+</svg>
+</div>
+
+<!-- Équipe Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10 bg-background" id="equipe">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-4">Notre Équipe &amp; Les Rôles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Découvrez les porteuses de ce projet engagé.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="glass-card p-6 md:p-8 rounded-xl flex gap-6 items-start">
+<img alt="Clara Faustin" class="w-20 h-20 rounded-full object-cover shrink-0 border-2 border-primary-container/30" src="https://lh3.googleusercontent.com/aida/AP1WRLvk36fz0n7rNLIf1PupyPW32MG2qcxHleP9HRjILVMxV0d4--nGl7VD9cEDp4PzNUiAgaFhnamKxR8wcBPev9Ouzf7HnLi4WzPksf8OOK81kyi_YLXAh0ShfNCIjN_YBtmDvrKsp3IImA_k7oMsIl_J6i4rmWS78Ged6gJq6I2WFcdsg0OcLQr2mJ3HZONcR78TkvGWjblsIJ7bPHK-BB2u7qGOeK88Pt8KvXNouAICX-zrE6HVHA5jPs6V"/>
+<div>
+<h4 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-1">Clara Faustin</h4>
+<p class="font-body-md text-sm text-primary font-semibold mb-3">Présidente de Premier Lien (Étudiante en soins infirmiers, projet IPDE)</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 leading-relaxed">
+    Sensible aux enjeux de la santé de la femme, de la parentalité et de la petite enfance, elle a souhaité créer cette association pour favoriser la prévention et le soutien aux familles.
+</p>
+<ul class="text-xs text-on-surface-variant space-y-1">
+    <li>• Assurer la coordination générale des projets</li>
+    <li>• Participer au développement de l’association</li>
+    <li>• Concevoir et soutenir les actions de prévention</li>
+    <li>• Développer les partenariats et les collaborations</li>
+</ul>
+</div>
+</div>
+<div class="glass-card p-6 md:p-8 rounded-xl flex gap-6 items-start">
+<img alt="Josiane Vigue" class="w-20 h-20 rounded-full object-cover shrink-0 border-2 border-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRGGBoN9Smbw2injeKLeZ4LQAjDP5M7a4ZuW-7rtH0QeiP8x80y6V4uPoINjh03Kpiw8ubM9rNmPH9P8G3qdDTInm2mbk5G-7cKHOgIbLAisQcGHmwxtzctMNpdBeOO5ynqb6W7vHu_rjXqDFhKcTDdilW89d8bI67mL_u7SDsZ2ekUkDtXLZiszATst1I9ohRJOINZCWNB6CXHPSYbg03qID9ireoSKu8xqHF2Az_GQMcixM1Lain1FArH75NBuIDNKgta5Ifq7xo"/>
+<div>
+<h4 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-1">Josiane Vigue</h4>
+<p class="font-body-md text-sm text-primary font-semibold mb-3">Référente Petite Enfance (Future auxiliaire de puériculture)</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 leading-relaxed">
+    Actuellement en formation, elle s'intéresse particulièrement au développement du jeune enfant, à l’accompagnement des familles et au bien-être des tout-petits.
+</p>
+<ul class="text-xs text-on-surface-variant space-y-1">
+    <li>• Référente petite enfance et besoins du nourrisson</li>
+    <li>• Sensibilisation autour du développement de l’enfant</li>
+    <li>• Participation aux actions de prévention</li>
+    <li>• Soutien aux projets liés à la parentalité</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Organic Divider -->
+<div class="w-full h-16 bg-surface-container-low overflow-hidden relative z-10">
+<svg class="absolute bottom-0 w-full h-full text-background fill-current" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+<path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5V0Z" opacity=".5"></path>
+<path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+</svg>
+</div>
+
+<!-- Missions & Valeurs Section -->
+<section class="bg-surface-container-low py-24 px-margin-mobile md:px-margin-desktop relative z-10" id="missions">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-4">Missions &amp; Valeurs</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Chez Premier Lien, nous nous engageons à promouvoir l'entraide et l'écoute.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+<!-- Valeur 1 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Bienveillance</h3>
+</div>
+<!-- Valeur 2 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">hearing</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Écoute</h3>
+</div>
+<!-- Valeur 3 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">handshake</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Respect de chacun</h3>
+</div>
+<!-- Valeur 4 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Inclusion</h3>
+</div>
+<!-- Valeur 5 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">accessible</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Accessibilité</h3>
+</div>
+<!-- Valeur 6 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">health_and_safety</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Prévention</h3>
+</div>
+<!-- Valeur 7 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">diversity_1</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Entraide</h3>
+</div>
+<!-- Valeur 8 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center gap-3 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">volunteer_activism</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-lg">Solidarité</h3>
+</div>
+</div>
+
+<!-- Engagements éthiques Card -->
+<div class="max-w-3xl mx-auto glass-card p-8 md:p-10 rounded-2xl">
+    <h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
+        📖 Nos Engagements Éthiques
+    </h3>
+    <ul class="space-y-4 text-on-surface-variant text-sm md:text-base">
+        <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+            <span>Diffuser des informations fondées sur des <strong>sources fiables et actualisées</strong>.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+            <span>Respecter la confidentialité des échanges.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+            <span>Adopter une posture non jugeante.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+            <span>Orienter vers les professionnels compétents lorsque cela est nécessaire.</span>
+        </li>
+        <li class="flex gap-3 items-start text-error font-semibold">
+            <span class="material-symbols-outlined text-error text-lg mt-0.5">warning</span>
+            <span>Ne jamais nous substituer à une consultation médicale ou psychologique.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+            <span>Respecter la dignité et l’autonomie de chaque personne.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+            <span>Promouvoir une approche respectueuse des femmes, des parents et des enfants.</span>
+        </li>
+    </ul>
+</div>
+</div>
+</section>
+
+<!-- Domaines d'Actions Section (Tabs) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10" id="thematiques">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-4">Nos Domaines d'Actions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Explorez nos thématiques par onglets.</p>
+</div>
+<!-- Tab Navigation -->
+<div class="flex flex-wrap justify-center border-b border-outline-variant/30 mb-8">
+<button class="domaines-btn active px-6 py-4 font-headline-md text-lg text-primary border-b-2 border-primary font-bold hover:bg-surface-container-low transition-colors" onclick="openTab(event, 'sante-femme', 'domaines')">
+                        Santé de la femme
+                    </button>
+<button class="domaines-btn px-6 py-4 font-headline-md text-lg text-on-surface-variant border-b-2 border-transparent hover:text-primary hover:bg-surface-container-low transition-colors" onclick="openTab(event, 'parentalite', 'domaines')">
+                        Parentalité
+                    </button>
+<button class="domaines-btn px-6 py-4 font-headline-md text-lg text-on-surface-variant border-b-2 border-transparent hover:text-primary hover:bg-surface-container-low transition-colors" onclick="openTab(event, 'petite-enfance', 'domaines')">
+                        Petite enfance
+                    </button>
+</div>
+<!-- Tab Content: Santé de la femme -->
+<div class="domaines-content active" id="sante-femme">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text mb-4">Comprendre et accompagner le corps féminin</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Santé menstruelle et contraception.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Grossesse et préparation à l'arrivée de l'enfant.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Post-partum et bien-être / santé mentale maternelle.</span>
+</li>
+</ul>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-sm h-80">
+<img alt="Santé de la femme" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxTB_M_97IAkAjVndd-xDmyTLxzeYIlHpQ5R3DaoT18C-h2C1xmMn8Jd8YjjqQiFZpsOXlGsxxN4KBXmMyKupJq9HBsgifMamZNHvccB8CPDUrlI-KK_l2_mYKHe8JeG8VGXmSrXphv13Gtupo7wc0swieZveAQLGvcsNZE-9lP-4CHJkDRv6UFXr-I_2p2l7frg5JBJAlzeoF9daHYaZQJJHBm7AqjDS2_6U2inHpQxIMEeoc3e-Pej9gn6z8gu4V_SVGrJbdGHH3"/>
+</div>
+</div>
+</div>
+<!-- Tab Content: Parentalité -->
+<div class="domaines-content" id="parentalite">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-sm h-80">
+<img alt="Parentalité" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNjcYs7Zjgde9emAy3drg9YML5p5DHYMrUT_eh5NKyf0Map6DKK38YD6yBL-g4vb3QhdSK6IbOfmZaBYIFeO-ZnCbF7RU3EjYD26YpPwUMseGE4dY35p-PeAr3EoeHXaTNhwKIoCOqNq8yFQhD6c_NyiGRp4be4UkZxQ0m6o-OTsNhrgU1sBOpQk4XJ2Iv7xsCmK1OjXmCop60-fukWoCAL7pe0zvQx10B-84l7HYOTp9DM9ijXfoyRwz-8N1UKwqOzXEDbaWy8Tvo"/>
+</div>
+<div class="order-1 md:order-2">
+<h3 class="font-headline-md text-headline-md text-charcoal-text mb-4">Soutenir le lien parent-enfant</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Soutien à la parentalité et écoute active.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Gestion de la charge mentale parentale.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Accompagnement et renforcement des liens familiaux.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Tab Content: Petite enfance -->
+<div class="domaines-content" id="petite-enfance">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text mb-4">Favoriser le développement de l'enfant</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Développement du nourrisson et du jeune enfant.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Sommeil, rythmes et alimentation de l'enfant.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Sécurité, bien-être et prévention des accidents.</span>
+</li>
+</ul>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-sm h-80">
+<img alt="Petite enfance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHYN9BRbxZTIa3ZS3tVYTxVPAZW6F8TDrxVMtHvV6YslBmxPY2E1LBVy3uAwM85cQlmSJXoDMIc3bUMhByEIiFKaROLxa4NXAqPaJmdIMCwLcm04Lvz8boHbAenRF9KMcqhDSkv6bRtnYdalt7d1wfYLfMpppEZqcADaA1d-IWlY8JkL6G7Mr-UapBDbAketyj1WXKNGwnbn2VhmBMVNj_IdlaX3LRBgJOFjtXgyq3mCXetzfPnRsvUKAXFqNX6W4h8ulplWDFGPEH"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Survey Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative z-10" id="questionnaire-section">
+<div class="max-w-4xl mx-auto">
+<div class="glass-card p-10 md:p-14 rounded-3xl text-center flex flex-col items-center gap-8 border-2 border-primary/20">
+<div class="w-20 h-20 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-4xl">rate_review</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-4">Aidez-nous à mieux vous comprendre</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Afin de proposer des actions vraiment utiles, nous souhaitons mieux comprendre vos besoins, vos questions et les sujets sur lesquels vous manquez d'informations fiables. Votre expérience compte !</p>
+</div>
+<a class="bg-primary-container text-on-primary-container font-label-md text-label-md px-10 py-4 rounded-full hover:opacity-90 transition-opacity shadow-md hover:shadow-lg transform active:scale-95 duration-200" href="https://forms.gle/L6PJxG4Vg2GbvQaR7" target="_blank">
+                        Répondre au questionnaire
+                    </a>
+</div>
+</div>
+</section>
+<!-- Actualités & Actions Section -->
+<section class="bg-surface-container-high py-24 px-margin-mobile md:px-margin-desktop relative z-10" id="actualites">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-2">Actualités &amp; Actions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Les derniers événements de l'association.</p>
+</div>
+<a class="hidden md:inline-flex items-center gap-2 text-primary font-bold hover:underline" href="#">
+                        Voir tout <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Actu 1 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+<div class="h-48 relative overflow-hidden">
+<img alt="Semaine de l'allaitement" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxTB_M_97IAkAjVndd-xDmyTLxzeYIlHpQ5R3DaoT18C-h2C1xmMn8Jd8YjjqQiFZpsOXlGsxxN4KBXmMyKupJq9HBsgifMamZNHvccB8CPDUrlI-KK_l2_mYKHe8JeG8VGXmSrXphv13Gtupo7wc0swieZveAQLGvcsNZE-9lP-4CHJkDRv6UFXr-I_2p2l7frg5JBJAlzeoF9daHYaZQJJHBm7AqjDS2_6U2inHpQxIMEeoc3e-Pej9gn6z8gu4V_SVGrJbdGHH3"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-surface/90 text-primary text-xs font-bold rounded-full uppercase tracking-wider">Événement</span>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-3 group-hover:text-primary transition-colors">Semaine de l'allaitement</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Rejoignez-nous pour une série d'ateliers et de rencontres dédiés à l'allaitement maternel.</p>
+<span class="text-sm text-outline font-medium">À venir</span>
+</div>
+</div>
+<!-- Actu 2 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+<div class="h-48 relative overflow-hidden">
+<img alt="Octobre Rose" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATSiq5ntQP68DGneg3Ey5kyhghllJ72UzjiIbqf-wHVPWzsueMRuvVixyM2-XKzckwOtAOztS10FqhfvifIbIYgOwr8KO8IAq3Qnu-QWv6a1HvmFdbNUmqmlDXjuZ6PZBoFPx35iikapJqc9jY8DRJ50pfZVoJDu-nbu9uVIs6GapPDvSsSPjpPQOPDizKBxeSw6d_IvhGsmFe5I7SXuj_E8uRc3NahOGid6vMYVGsW_s4fe9NBEYtcJyxqbF_08JNl12-OwYI6j6k"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-surface/90 text-tertiary text-xs font-bold rounded-full uppercase tracking-wider">Campagne</span>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-3 group-hover:text-primary transition-colors">Octobre Rose</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Mobilisation et sensibilisation pour la prévention du cancer du sein avec nos partenaires locaux.</p>
+<span class="text-sm text-outline font-medium">En cours</span>
+</div>
+</div>
+<!-- Actu 3 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+<div class="h-48 relative overflow-hidden">
+<img alt="Collecte solidaire" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH9tUH54HtQUkSEc6r2rRv-2sQ8pbQ4X-LtAmV5Bghte-iw3kT53hIuUYqBtpC7YHYD-xzsZHp47orMMFny9HBV8dW8Otd1oN5PSfPwCBil3HrpyLmgKDw0OKPkOVabtIcWg07U98_wxaYnPeUZNemY4TquV3fOfSX5-hOtK2Cickozuh-F8JuGstfBuCgBtjbg0FFEvYaPyv5uF0eFDoKghGEMiypDExZLLrIT5GOLGbTy6_vlr5mdeyN-oru1XgRBCxBGjRzyWfQ"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-surface/90 text-secondary text-xs font-bold rounded-full uppercase tracking-wider">Action</span>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-3 group-hover:text-primary transition-colors">Collecte solidaire</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Grande collecte de vêtements et matériel de puériculture pour les familles dans le besoin.</p>
+<span class="text-sm text-outline font-medium">En préparation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Nous Rejoindre & Contact Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10 bg-background animate-fade-in" id="contact">
+<div class="max-w-4xl mx-auto glass-card p-8 md:p-12 rounded-2xl shadow-lg">
+<div class="text-center mb-10">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-4">Nous Rejoindre &amp; Contact</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Vous souhaitez vous impliquer ou avez une question ? Contactez-nous ou écrivez-nous directement à <a class="text-primary hover:underline font-medium" href="mailto:premier.lien.asso@gmail.com">premier.lien.asso@gmail.com</a></p>
+<div class="flex justify-center gap-6 mt-4">
+    <a href="https://instagram.com/premier.lien.association" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="Instagram">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+        <span class="font-body-md text-sm font-medium">@premier.lien.association</span>
+    </a>
+    <a href="https://tiktok.com/@premier.lien.association" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="TikTok">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.85.94 2 1.62 3.27 1.91V10c-1.2-.08-2.38-.52-3.39-1.19-.71-.47-1.33-1.07-1.81-1.78v8.32c-.06 1.78-.65 3.54-1.72 4.92-1.39 1.76-3.63 2.76-5.87 2.69-2.67-.14-5.12-1.92-6.05-4.43-.99-2.73-.24-5.91 1.88-7.85 1.5-1.35 3.59-1.98 5.6-1.68.02 1.39.01 2.79.02 4.18-.87-.27-1.83-.17-2.61.32-.82.52-1.35 1.43-1.44 2.4-.11 1.3.57 2.6 1.7 3.22.95.52 2.1.53 3.06.02 1.01-.55 1.65-1.61 1.72-2.76.01-3.68.01-7.36.01-11.04v-.02z"/>
+        </svg>
+        <span class="font-body-md text-sm font-medium">@premier.lien.association</span>
+    </a>
+</div>
+</div>
+<!-- Contact Form -->
+<form id="contact-form" action="https://formsubmit.co/ajax/premier.lien.asso@gmail.com" class="space-y-6" method="POST">
+<input id="selected-profile" name="Profil / Rôle" type="hidden" value="Bénévole"/>
+<input type="hidden" name="_template" value="box">
+<input type="hidden" name="_subject" id="email-subject" value="[Premier Lien] Nouveau message - Bénévole">
+<input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre message et nous vous remercions chaleureusement pour votre intérêt envers l'association Premier Lien. Clara et Josiane étudient votre demande avec le plus grand soin et reviendront vers vous très prochainement. Cordialement, L'équipe Premier Lien">
+<!-- Profile Selection Tabs -->
+<div class="flex flex-wrap justify-center border-b border-outline-variant/30 mb-8">
+<button class="profile-btn active px-6 py-3 font-headline-md text-base md:text-lg text-primary border-b-2 border-primary font-bold hover:bg-surface-container-low transition-colors" onclick="selectProfile(event, 'benevole')" type="button">
+                            Bénévoles
+                        </button>
+<button class="profile-btn px-6 py-3 font-headline-md text-base md:text-lg text-on-surface-variant border-b-2 border-transparent hover:text-primary hover:bg-surface-container-low transition-colors" onclick="selectProfile(event, 'partenaire')" type="button">
+                            Partenaires
+                        </button>
+<button class="profile-btn px-6 py-3 font-headline-md text-base md:text-lg text-on-surface-variant border-b-2 border-transparent hover:text-primary hover:bg-surface-container-low transition-colors" onclick="selectProfile(event, 'professionnel')" type="button">
+                            Professionnels
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-sm font-medium text-charcoal-text mb-2" for="c-name">Nom complet / Organisation *</label>
+<input class="w-full rounded-lg border-outline-variant/50 bg-surface/50 focus:border-primary focus:ring-primary" id="c-name" name="Nom complet / Organisation" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-sm font-medium text-charcoal-text mb-2" for="c-email">Email *</label>
+<input class="w-full rounded-lg border-outline-variant/50 bg-surface/50 focus:border-primary focus:ring-primary" id="c-email" name="Adresse E-mail" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-sm font-medium text-charcoal-text mb-2" for="c-message">Votre message *</label>
+<textarea class="w-full rounded-lg border-outline-variant/50 bg-surface/50 focus:border-primary focus:ring-primary h-32" id="c-message" name="Message" required=""></textarea>
+</div>
+<div class="text-center pt-4">
+<button class="bg-primary text-on-primary font-label-md px-8 py-3 rounded-full hover:opacity-90 transition-opacity shadow-sm hover:shadow-md transform active:scale-95 duration-200" type="submit">
+                            Envoyer le message
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-dim w-full relative flat py-12 px-margin-mobile md:px-margin-desktop mt-auto" id="footer">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-8">
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center gap-3">
+<img alt="Logo Premier Lien" class="w-12 h-12 object-contain rounded-full" src="./images/logo.jpg"/>
+<span class="font-headline-lg text-headline-lg font-bold text-charcoal-text dark:text-surface-bright">Premier Lien</span>
+</div>
+<div class="flex items-center gap-4 mt-2">
+    <a href="https://instagram.com/premier.lien.association" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="Instagram">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+    </a>
+    <a href="https://tiktok.com/@premier.lien.association" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="TikTok">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.85.94 2 1.62 3.27 1.91V10c-1.2-.08-2.38-.52-3.39-1.19-.71-.47-1.33-1.07-1.81-1.78v8.32c-.06 1.78-.65 3.54-1.72 4.92-1.39 1.76-3.63 2.76-5.87 2.69-2.67-.14-5.12-1.92-6.05-4.43-.99-2.73-.24-5.91 1.88-7.85 1.5-1.35 3.59-1.98 5.6-1.68.02 1.39.01 2.79.02 4.18-.87-.27-1.83-.17-2.61.32-.82.52-1.35 1.43-1.44 2.4-.11 1.3.57 2.6 1.7 3.22.95.52 2.1.53 3.06.02 1.01-.55 1.65-1.61 1.72-2.76.01-3.68.01-7.36.01-11.04v-.02z"/>
+        </svg>
+    </a>
+    <a href="mailto:premier.lien.asso@gmail.com" class="text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="Email">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+</div>
+</div>
+<div class="text-center max-w-3xl">
+<p class="font-body-md text-sm text-secondary dark:text-secondary-fixed-dim mb-4">
+<strong class="text-error">Avertissement :</strong> L'association Premier Lien a pour unique vocation l'information, la sensibilisation et le soutien. Les informations partagées ne remplacent en aucun cas un avis médical. Pour toute question de santé, veuillez consulter un professionnel de santé qualifié.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2026 Premier Lien. Nurturing the hive of motherhood.
+                </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./index.html">Accueil</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./ressources.html">Nos Ressources</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./faq.html">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./mentions-legales.html">Mentions Légales</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./politique-confidentialite.html">Confidentialité</a>
+</nav>
+</div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:max-w-md bg-surface-container-lowest border border-outline-variant rounded-2xl shadow-xl p-6 z-[200] hidden">
+    <div class="flex flex-col gap-4">
+        <p class="text-xs text-on-surface-variant leading-relaxed">
+            Ce site utilise des cookies locaux pour optimiser votre expérience de navigation. En poursuivant votre visite, vous acceptez notre politique de confidentialité.
+        </p>
+        <div class="flex justify-end gap-3 text-xs">
+            <button id="cookie-decline" class="text-on-surface-variant font-semibold hover:text-on-surface focus:outline-none">
+                Refuser
+            </button>
+            <button id="cookie-accept" class="bg-primary-container text-on-primary-container font-label-md px-4 py-2 rounded-full hover:opacity-90 transition-opacity shadow-sm active:scale-95 duration-200">
+                Accepter
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    
+    if (menuBtn && mobileDrawer) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = mobileDrawer.classList.contains('hidden');
+            if (isHidden) {
+                mobileDrawer.classList.remove('hidden');
+                menuBtn.querySelector('.material-symbols-outlined').textContent = 'close';
+            } else {
+                mobileDrawer.classList.add('hidden');
+                menuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+            }
+        });
+        
+        // Close drawer when clicking a link
+        mobileDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.add('hidden');
+                menuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+            });
+        });
+    }
+
+    // Cookie Consent Toggler
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieDecline = document.getElementById('cookie-decline');
+    
+    if (cookieBanner && cookieAccept && cookieDecline) {
+        const consent = localStorage.getItem('cookie_consent');
+        if (!consent) {
+            setTimeout(() => {
+                cookieBanner.classList.remove('hidden');
+            }, 1500);
+        }
+        
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'accepted');
+            cookieBanner.classList.add('hidden');
+        });
+        
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'declined');
+            cookieBanner.classList.add('hidden');
+        });
+    }
+
+    // Ajax Form Submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span class="flex items-center justify-center gap-2">
+                    <svg class="animate-spin h-5 w-5 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Envoi en cours...
+                </span>
+            `;
+            
+            // Clear any previous error messages
+            const existingError = document.getElementById('submit-error');
+            if (existingError) existingError.remove();
+            
+            // Gather form data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Send request
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                
+                if (result.success === 'true' || result.success === true) {
+                    // Success! Clear the form
+                    form.reset();
+                    // Reset the hidden profile value to default
+                    document.getElementById('selected-profile').value = 'Bénévole';
+                    document.getElementById('email-subject').value = '[Premier Lien] Nouveau message - Bénévole';
+                    
+                    // Show success modal
+                    showSuccessModal();
+                } else {
+                    showSubmitError(result.message || "Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+                }
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                showSubmitError("Impossible de contacter le serveur. Veuillez vérifier votre connexion et réessayer.");
+            });
+        });
+    }
+
+    function showSubmitError(message) {
+        const existingError = document.getElementById('submit-error');
+        if (existingError) existingError.remove();
+        
+        const errorDiv = document.createElement('div');
+        errorDiv.id = 'submit-error';
+        errorDiv.className = 'mt-4 p-4 rounded-xl bg-error-container/20 border border-error text-error text-sm text-center font-medium animate-fade-in';
+        errorDiv.textContent = message;
+        
+        const form = document.getElementById('contact-form');
+        form.appendChild(errorDiv);
+    }
+
+    function showSuccessModal() {
+        const modal = document.getElementById('success-modal');
+        const card = modal.querySelector('.glass-card');
+        modal.classList.remove('hidden');
+        // Force reflow
+        modal.offsetHeight;
+        modal.classList.remove('opacity-0');
+        card.classList.remove('scale-95');
+        card.classList.add('scale-100');
+    }
+
+    window.closeSuccessModal = function() {
+        const modal = document.getElementById('success-modal');
+        const card = modal.querySelector('.glass-card');
+        modal.classList.add('opacity-0');
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+</script>
+
+<!-- Success Modal -->
+<div id="success-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-charcoal-text/40 backdrop-blur-md hidden transition-all duration-300 opacity-0">
+    <div class="glass-card max-w-md w-full p-8 md:p-10 rounded-2xl shadow-2xl flex flex-col items-center text-center gap-6 transform scale-95 transition-all duration-300">
+        <!-- Golden Icon with circular animation -->
+        <div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary animate-bounce shadow-md">
+            <span class="material-symbols-outlined text-4xl">check_circle</span>
+        </div>
+        <div class="space-y-2">
+            <h3 class="font-headline-md text-2xl text-charcoal-text font-bold">Message Envoyé !</h3>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Merci pour votre intérêt envers <strong>Premier Lien</strong>. Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.
+            </p>
+        </div>
+        <button onclick="closeSuccessModal()" class="w-full bg-primary text-on-primary font-label-md py-3 rounded-full hover:opacity-90 transition-opacity shadow-sm hover:shadow-md transform active:scale-95 duration-200">
+            Fermer
+        </button>
+    </div>
+</div>
+</body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/jpeg" href="./images/logo.jpg"/>
+<title>Mentions Légales - Premier Lien</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#7f5700",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#fcdcd1",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#837562",
+                    "surface-container": "#efeeeb",
+                    "on-tertiary-container": "#5d473f",
+                    "surface-bright": "#fbf9f6",
+                    "primary-fixed-dim": "#ffba3d",
+                    "surface-variant": "#e4e2df",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "charcoal-text": "#3C2A21",
+                    "tertiary-fixed-dim": "#dfc0b5",
+                    "secondary-fixed": "#cfeacc",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdead",
+                    "glass-white": "rgba(255, 255, 255, 0.75)",
+                    "primary-container": "#f3b033",
+                    "on-surface": "#1b1c1a",
+                    "outline-variant": "#d5c4ae",
+                    "on-background": "#1b1c1a",
+                    "surface-container-highest": "#e4e2df",
+                    "surface-container-high": "#eae8e5",
+                    "primary": "#7f5700",
+                    "on-surface-variant": "#504534",
+                    "tertiary-container": "#d4b6ac",
+                    "surface": "#fbf9f6",
+                    "tertiary": "#715951",
+                    "powder-rose": "#FAF0EC",
+                    "on-tertiary-fixed": "#281711",
+                    "on-secondary-fixed-variant": "#364c36",
+                    "surface-dim": "#dbdad7",
+                    "on-primary-fixed-variant": "#604100",
+                    "inverse-surface": "#30312f",
+                    "on-tertiary-fixed-variant": "#57423a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#cfeacc",
+                    "on-primary-fixed": "#281900",
+                    "on-secondary-fixed": "#0b200e",
+                    "on-primary-container": "#664500",
+                    "secondary-fixed-dim": "#b4cdb1",
+                    "on-secondary-container": "#536a52",
+                    "inverse-primary": "#ffba3d",
+                    "secondary": "#4d644d",
+                    "inverse-on-surface": "#f2f0ed",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f5f3f0",
+                    "background": "#fbf9f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "headline-xl-mobile": ["Outfit"],
+                    "headline-lg": ["Outfit"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Outfit"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased relative min-h-screen flex flex-col">
+<!-- Header (TopAppBar) -->
+<header class="bg-glass-white/75 backdrop-blur-[10px] fixed top-0 w-full z-50 border-b border-white/40 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2">
+<img alt="Logo Premier Lien" class="w-10 h-10 object-contain rounded-full" src="./images/logo.jpg"/>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Premier Lien</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-6 lg:gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="./index.html#histoire">Histoire</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="./index.html#missions">Missions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="./index.html#thematiques">Thématiques</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="./index.html#actualites">Actualités</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="./index.html#contact">Contact</a>
+</nav>
+<div class="hidden md:block">
+<a class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-sm hover:shadow-md transform active:scale-95 duration-200" href="./index.html#contact">
+                    Nous contacter
+                </a>
+</div>
+<!-- Mobile Menu Button -->
+<button id="menu-btn" class="md:hidden text-on-surface-variant p-2 focus:outline-none">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+
+<!-- Mobile Drawer Navigation -->
+<div id="mobile-drawer" class="hidden md:hidden bg-background border-b border-white/40 px-6 py-6 flex flex-col gap-4 absolute top-20 left-0 w-full shadow-lg">
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="./index.html#histoire">Histoire</a>
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="./index.html#missions">Missions</a>
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="./index.html#thematiques">Thématiques</a>
+    <a class="text-charcoal-text/95 font-medium border-b border-charcoal-text/5 pb-2" href="./index.html#actualites">Actualités</a>
+    <a class="text-charcoal-text/95 font-medium pb-2" href="./index.html#contact">Contact</a>
+    <a class="bg-primary-container text-on-primary-container text-center font-label-md text-label-md py-3 rounded-full mt-2 hover:opacity-90 transition-opacity shadow-sm active:scale-95 duration-200" href="./index.html#contact">
+        Nous contacter
+    </a>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-20">
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10" id="mentions-legales-page">
+<div class="max-w-[800px] mx-auto">
+<h1 class="font-headline-xl text-headline-xl text-charcoal-text mb-8 text-center">Mentions Légales</h1>
+
+<div class="space-y-8">
+    
+    <!-- Disclaimer -->
+    <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-error/20 bg-error-container/10">
+        <h3 class="font-headline-md text-headline-md text-error text-xl mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined">warning</span>
+            Avertissement de Prévention Médicale
+        </h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed font-semibold">
+            L'association Premier Lien a pour unique vocation l'information, la sensibilisation et la prévention en santé. Les informations partagées sur ce site et sur nos supports de communication ne remplacent en aucun cas un avis, un diagnostic ou un traitement médical. Pour toute question de santé, veuillez consulter un professionnel qualifié (médicament généraliste, pédiatre, sage-femme, psychologue, etc.).
+        </p>
+    </div>
+
+    <!-- Publisher info -->
+    <div class="glass-card p-6 md:p-8 rounded-2xl">
+        <h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-4">1. Édition du site</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+            Le site web est édité par l'association <strong>Premier Lien</strong>, régie par la loi du 1er juillet 1901.<br/>
+            <strong>Responsable de la publication :</strong> Clara Faustin, en sa qualité de Présidente.<br/>
+            <strong>Email de contact :</strong> premier.lien.asso@gmail.com
+        </p>
+    </div>
+    
+    <!-- Hosting info -->
+    <div class="glass-card p-6 md:p-8 rounded-2xl">
+        <h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-4">2. Hébergement</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+            Ce site est hébergé de manière sécurisée auprès d'un hébergeur tiers conforme aux réglementations européennes sur la protection des données.<br/>
+            <strong>Hébergeur :</strong> Vercel Inc., 340 S Lemon Ave #1135, Walnut, CA 91789, États-Unis. Site web : https://vercel.com.
+        </p>
+    </div>
+
+    <!-- Intellectual Property -->
+    <div class="glass-card p-6 md:p-8 rounded-2xl">
+        <h3 class="font-headline-md text-headline-md text-charcoal-text text-xl mb-4">3. Propriété intellectuelle</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+            Les logos, chartes graphiques, illustrations et textes figurant sur ce site sont la propriété exclusive de l'association <strong>Premier Lien</strong>. Toute reproduction ou utilisation non autorisée est interdite et peut faire l'objet de poursuites, sauf accord exprès des responsables de l'association.
+        </p>
+    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-dim w-full relative flat py-12 px-margin-mobile md:px-margin-desktop mt-auto" id="footer">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-8">
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center gap-3">
+<img alt="Logo Premier Lien" class="w-12 h-12 object-contain rounded-full" src="./images/logo.jpg"/>
+<span class="font-headline-lg text-headline-lg font-bold text-charcoal-text dark:text-surface-bright">Premier Lien</span>
+</div>
+<div class="flex items-center gap-4 mt-2">
+    <a href="https://instagram.com/premier.lien.association" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="Instagram">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+    </a>
+    <a href="https://tiktok.com/@premier.lien.association" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="TikTok">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.85.94 2 1.62 3.27 1.91V10c-1.2-.08-2.38-.52-3.39-1.19-.71-.47-1.33-1.07-1.81-1.78v8.32c-.06 1.78-.65 3.54-1.72 4.92-1.39 1.76-3.63 2.76-5.87 2.69-2.67-.14-5.12-1.92-6.05-4.43-.99-2.73-.24-5.91 1.88-7.85 1.5-1.35 3.59-1.98 5.6-1.68.02 1.39.01 2.79.02 4.18-.87-.27-1.83-.17-2.61.32-.82.52-1.35 1.43-1.44 2.4-.11 1.3.57 2.6 1.7 3.22.95.52 2.1.53 3.06.02 1.01-.55 1.65-1.61 1.72-2.76.01-3.68.01-7.36.01-11.04v-.02z"/>
+        </svg>
+    </a>
+    <a href="mailto:premier.lien.asso@gmail.com" class="text-on-surface-variant hover:text-primary transition-colors duration-200" aria-label="Email">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+</div>
+</div>
+<div class="text-center max-w-3xl">
+<p class="font-body-md text-sm text-secondary dark:text-secondary-fixed-dim mb-4">
+<strong class="text-error">Avertissement :</strong> L'association Premier Lien a pour unique vocation l'information, la sensibilisation et le soutien. Les informations partagées ne remplacent en aucun cas un avis médical. Pour toute question de santé, veuillez consulter un professionnel de santé qualifié.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2026 Premier Lien. Nurturing the hive of motherhood.
+                </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./index.html">Accueil</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./ressources.html">Nos Ressources</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./faq.html">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./mentions-legales.html">Mentions Légales</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all hover:underline" href="./politique-confidentialite.html">Confidentialité</a>
+</nav>
+</div>
+</footer>
+
+<script>
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    
+    if (menuBtn && mobileDrawer) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = mobileDrawer.classList.contains('hidden');
+            if (isHidden) {
+                mobileDrawer.classList.remove('hidden');
+                menuBtn.querySelector('.material-symbols-outlined').textContent = 'close';
+            } else {
+                mobileDrawer.classList.add('hidden');
+                menuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+            }
+        });
+        
+        // Close drawer when clicking a link
+        mobileDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.add('hidden');
+                menuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+            });
+        });
+    }
+</script>
+</body></html>
